@@ -1,0 +1,5 @@
+# Instalar dependências
+pip install grpcio grpcio-tools
+
+# Gerar código a partir do proto
+python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. exemplo.proto

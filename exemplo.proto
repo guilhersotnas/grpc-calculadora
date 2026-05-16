@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package calculadora;
+
+service Calculadora {
+
+  rpc Somar (DoisNumeros) returns (Resultado);
+
+  rpc Subtrair (DoisNumeros) returns (Resultado);
+
+  rpc Multiplicar (DoisNumeros) returns (Resultado);
+
+  rpc Dividir (DoisNumeros) returns (Resultado);
+
+  rpc CalcularPotencia (DoisNumeros) returns (Resultado);
+
+  rpc CalcularRaizQuadrada (Numero) returns (Resultado);
+
+  rpc SomarStream (stream Numero) returns (Resultado);
+
+  rpc GerarTabuada (Numero) returns (stream Resultado);
+
+  rpc CalcularMediaMovel (stream Numero) returns (stream Resultado);
+}
+
+message DoisNumeros {
+  double numero1 = 1;
+  double numero2 = 2;
+}
+
+message Numero {
+  double valor = 1;
+}
+
+message Resultado {
+  double resultado = 1;
+  string mensagem = 2;
+}
