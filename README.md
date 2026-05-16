@@ -1,5 +1,3 @@
-Pode copiar e colar exatamente isso no `README.md` do GitHub:
-
 ````md
 # Calculadora Distribuída com gRPC
 
